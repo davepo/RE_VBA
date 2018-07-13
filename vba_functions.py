@@ -1,3 +1,5 @@
+import os
+
 def Mid(data, start, length):
 	return data[start : (start+length)]			
 
@@ -36,3 +38,11 @@ def Chr(data):
 	
 def Asc(data):
 	return ord(data)
+
+def Environ(env_var):
+	return os.environ[env_var]
+
+#def SetAttr(path, val):
+
+def OpenForBinaryAccess(path):
+	return open(path, "wb")
