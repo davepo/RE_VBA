@@ -48,7 +48,15 @@ def OpenForBinaryAccess(path):
 
 def MsgBox(message):
 	ctypes.windll.user32.MessageBoxW(0, message, "Message", 0)
+	
+def Put(binaryWriteFileObject, byteOffset, data):
+	binaryWriteFileObject.seek(byteOffset, 1)
+	binaryWriteFileObject.write(data)
+	return None
 
 #def SetAttr(path, val):
 
-#def ObjectRun(file)
+def Run(executable):
+	command = "start "+executable
+	os.system(command)
+	return None
